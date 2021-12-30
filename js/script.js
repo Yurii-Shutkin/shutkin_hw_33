@@ -17,16 +17,6 @@
             return this.inputs;
         },
 
-        initEvent() {
-            this.form.addEventListener('submit', (event) => {
-                event.preventDefault();
-                if(this.markEmptyInputs()) return;
-                this.setData();
-                this.renderContent();
-                this.clearForm();
-            })
-        },
-
         clearForm() {
             this.form.reset();
         },
@@ -82,6 +72,16 @@
                     };
                 };
             });
+        },
+
+        initEvent() {
+            this.form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                if(this.markEmptyInputs()) return;
+                this.setData();
+                this.renderContent();
+                this.clearForm();
+            })
         },
 
         init() {
